@@ -1,0 +1,210 @@
+/* Format téléphones */
+
+
+@media screen and (max-width:500px) {
+    /* Barre de navigation */
+
+
+    nav {
+        height: auto;
+        /* Ajuste automatiquement la taille de la barre de navigation */
+        flex-direction: column;
+        /* Donne une direction de type colonne aux éléments */
+        align-items: center;
+        /* Centre horizontalement les éléments */
+    }
+
+    nav ul {
+        flex-direction: column;
+        /* Donne une direction de type colonne aux éléments */
+        margin: 0;
+        /* Enleve les marges */
+    }
+
+    nav ul li {
+        margin: 5px;
+        /* Marges de 5px sur les éléments li */
+    }
+
+    nav ul li a {
+        padding: 0;
+        /* Enleve le padding des liens */
+    }
+
+    .logo {
+        margin: 8px;
+        /* Marges de 8px sur le logo */
+    }
+
+    nav ul li a:hover {
+        background: none;
+        /* Enleve le background des liens avec l'effet hover */
+    }
+
+
+    /* Bannière */
+
+    .slider {
+        width: 350px;
+        /* Largeur du cadre */
+        height: 175px;
+        /* Hauteur du cadre */
+    }
+
+    .slides {
+        width: 1050px;
+        /* Largeur total du défilement */
+    }
+
+    .slide img {
+        width: 350px;
+        /* Largeur des images */
+        height: 175px;
+        /* Hauteur des images */
+    }
+
+    @keyframes slide {
+
+        /* Dire a l'animation qui a la valeur "slide" d'effectuer ce qui suit (valeur en -XXXXpx pour que les images aillent de droite a gauche */
+        0% {
+            transform: translateX(0);
+            /* A 0%, l'image ne bouge pas jusqu'a 23.33% */
+        }
+
+        23.33% {
+            transform: translateX(0);
+            /* De 23.33% à 33.33%, l'image se déplace jusqu'à -350px */
+        }
+
+        33.33% {
+            transform: translateX(-350px);
+            /* A 33.33%, l'image ne bouge pas jusqu'a 56.66% */
+        }
+
+        56.66% {
+            transform: translateX(-350px);
+            /* De 56.66% à 66.66%, l'image se déplace jusqu'à -700px */
+        }
+
+        66.66% {
+            transform: translateX(-700px);
+            /* A 66.66%, l'image ne bouge pas jusqu'a 89.99% */
+        }
+
+        89.99% {
+            transform: translateX(-700px);
+            /* De 89.99% à 0%, l'image va se déplacer de -700px à 0px */
+        }
+    }
+
+
+    /* Contenu index et webhistory */
+
+    .block {
+        margin: 70px 0;
+        /* Diminution des marges pour chaques bloques de texte */
+    }
+
+    .block img {
+        width: 300px;
+        /* Diminution de la taille des images pour chaques bloques de texte */
+    }
+
+
+    /* Contact */
+
+    .contact {
+        flex-direction: column;
+        /* Donne une direction de type colonne aux éléments */
+    }
+
+    .contact img {
+        width: 200px;
+        /* Diminution de la largeur de l'image */
+    }
+
+    .form input {
+        width: 250px;
+        /* Diminution de la largeur des input */
+    }
+
+    .form textarea {
+        width: 250px;
+        /* Diminution de la largeur du textarea */
+    }
+
+    .contact button {
+        margin-left: 75px;
+        /* Alignement du bouton avec le formulaire */
+    }
+
+
+    /* Quiz */
+
+    .boite-section {
+        margin: 80px 20px;
+        /* Ajustement des marges du quiz */
+    }
+}
+
+
+
+/* Format tablettes */
+
+@media (min-width:500px) and (max-width:1024px) {
+
+    /* Bannière */
+
+    .slider {
+        width: 600px;
+        /* Largeur du cadre */
+        height: 300px;
+        /* Hauteur du cadre */
+    }
+
+    .slides {
+        width: 1800px;
+        /* Largeur total du défilement */
+    }
+
+    .slide img {
+        width: 600px;
+        /* Largeur des images */
+        height: 300px;
+        /* Hauteur des images */
+    }
+
+    @keyframes slide {
+
+        /* Dire a l'animation qui a la valeur "slide" d'effectuer ce qui suit (valeur en -XXXXpx pour que les images aillent de droite a gauche */
+        0% {
+            transform: translateX(0);
+            /* A 0%, l'image ne bouge pas jusqu'a 23.33% */
+        }
+
+        23.33% {
+            transform: translateX(0);
+            /* De 23.33% à 33.33%, l'image se déplace jusqu'à -600px */
+        }
+
+        33.33% {
+            transform: translateX(-600px);
+            /* A 33.33%, l'image ne bouge pas jusqu'a 56.66% */
+        }
+
+        56.66% {
+            transform: translateX(-600px);
+            /* De 56.66% à 66.66%, l'image se déplace jusqu'à -1200px */
+        }
+
+        66.66% {
+            transform: translateX(-1200px);
+            /* A 66.66%, l'image ne bouge pas jusqu'a 89.99% */
+        }
+
+        89.99% {
+            transform: translateX(-1200px);
+            /* De 89.99% à 0%, l'image va se déplacer de -1200px à 0px */
+        }
+    }
+}

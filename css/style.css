@@ -1,0 +1,471 @@
+* {
+    margin: 0;
+    /* Pour enlever le margin automatiquement sur tout les éléments */
+    padding: 0;
+    /* Pour enlever le padding automatiquement sur tout les éléments */
+    box-sizing: border-box;
+    /* Pour que les éléments enfants de ne dépassent pas des éléments parents (avec margin, border etc...) */
+    list-style-type: none;
+    /* Pour enlever les puces des listes */
+    text-decoration: none;
+    /* Pour enlever les decoration des listes a puce (soulignement en particulier) */
+    font-family: "Montserrat", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    /* Police */
+}
+
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: whitesmoke;
+        color: #303030;
+    }
+}
+
+/* Pour definir un theme light si les paramètres de l'ordinateur sont en light mode */
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #303030;
+        color: whitesmoke;
+    }
+}
+
+/* Pour definir un theme dark si les paramètres de l'ordinateur sont en dark mode */
+
+.general-span {
+    color: orange;
+    /* Définit la couleur des span généreaux */
+    font-weight: 700;
+    /* Mettre le texte en gras */
+}
+
+
+/*/////////////////////////////////////////////////////////////////////////////////////////////*/
+
+
+/* Barre de navigation */
+
+nav {
+    background-color: #304ffe;
+    /* couleur de la barre de nav */
+    height: 4em;
+    /* Definir la hauteur de la barre de nav */
+    border-bottom: 1px solid black;
+    /* Bordure sous la barre de nav, 1px = taille, solid = style de bordure */
+    display: flex;
+    /* Utiliser les flexbox */
+    justify-content: space-between;
+    /* Pour espacer le logo a gauche et la liste a puce a droite */
+    box-shadow: 0px 3px 20px black;
+    /* Pour creer une ombre sous la barre de nav, Opx = alignement de droite a gauche, 3px = alignement de haut en bas, 20px = le flou */
+}
+
+nav ul {
+    display: flex;
+    /* Utiliser les flexbox */
+    justify-content: center;
+    /* Passe la liste a puce de haut en bas a droite a gauche */
+    align-items: center;
+    /* Aligner les élément de la liste au milieur de la barre de nav */
+    margin-right: 2em;
+    /* Espacement a droite de la liste */
+    overflow: hidden;
+    /* Pour que le hover des éléments ne déborder pas en dessous de la barre de nav */
+}
+
+nav ul li a {
+    padding: 1.5em;
+    /* Espacement entre les liens de la liste */
+    font-size: 20px;
+    /* Taille du texte des liens */
+    color: whitesmoke;
+    /* Couleur de texte des liens */
+    font-weight: 600;
+    /* Gras de texte des liens */
+}
+
+nav ul li a:hover {
+    background-color: #444;
+    /* Couleur de fond quand on passe la souris sur un lien */
+    color: black;
+    /* Couleur du texte des liens quand on passe la souris dessus */
+}
+
+.logo {
+    display: flex;
+    /* Utiliser les flexbox */
+    align-items: center;
+    /* Aligner le logo au milieur de la barre de nav */
+}
+
+.logo img {
+    width: 70px;
+    /* Largeur du logo */
+    margin-left: 1em;
+    /* Espacement a gauche du logo */
+}
+
+.logo img:hover {
+    width: 80px;
+    /* Largeur du logo quand on passe la souris dessus */
+}
+
+
+/*/////////////////////////////////////////////////////////////////////////////////////////////*/
+
+
+/* Bannière */
+
+.slider {
+    width: 1000px;
+    /* Largeur du cadre */
+    height: 500px;
+    /* Hauteur du cadre */
+    border: 2px solid black;
+    /* Bordure du cadre */
+    margin: 50px auto;
+    /* Marge de hauteur du cadre (50px) et centrage de droite a gauche (auto) */
+    overflow: hidden;
+    /* Pour que les images ne sortes pas du cadre */
+}
+
+.slides {
+    width: 3000px;
+    /* Largeur total du défilement */
+    animation: slide 10s infinite;
+    /* Animation du défilement (slide = valeur de l'animation, 10s = temps de l'animation, infinite = animation qui se repete a l'infini */
+}
+
+.slide {
+    float: left;
+    /* Pour que les images ne se supperposent pas mais qu'elles soient écartées les unes des autres */
+}
+
+.slide img {
+    width: 1000px;
+    /* Largeur des images */
+    height: 500px;
+    /* Hauteur des images */
+}
+
+@keyframes slide {
+
+    /* Dire a l'animation qui a la valeur "slide" d'effectuer ce qui suit (valeur en -XXXXpx pour que les images aillent de droite a gauche */
+    0% {
+        transform: translateX(0);
+        /* A 0%, l'image ne bouge pas jusqu'a 23.33% */
+    }
+
+    23.33% {
+        transform: translateX(0);
+        /* De 23.33% à 33.33%, l'image se déplace jusqu'à -1000px */
+    }
+
+    33.33% {
+        transform: translateX(-1000px);
+        /* A 33.33%, l'image ne bouge pas jusqu'a 56.66% */
+    }
+
+    56.66% {
+        transform: translateX(-1000px);
+        /* De 56.66% à 66.66%, l'image se déplace jusqu'à -2000px */
+    }
+
+    66.66% {
+        transform: translateX(-2000px);
+        /* A 66.66%, l'image ne bouge pas jusqu'a 89.99% */
+    }
+
+    89.99% {
+        transform: translateX(-2000px);
+        /* De 89.99% à 0%, l'image va se déplacer de -2000px à 0px */
+    }
+}
+
+
+/* //////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+
+/* Contenu index et webhistory */
+
+.content {
+    margin: auto;
+    /* Aligner les éléments au centre */
+    width: 80%;
+    /* Largeur de la section */
+}
+
+.block {
+    margin: 100px 0;
+    /* Marge de 100px en hauteur et 0 en largeur pour chaques bloques de texte */
+}
+
+.title {
+    font-size: 35px;
+    /* Taille du titre */
+    text-align: center;
+    /* Aligner le titre au centre */
+}
+
+.subtitle {
+    font-size: 25px;
+    /* Taille des sous-titres */
+    padding-left: 50px;
+    /* Padding de 50px a gauche pour décaler le titre legerement par rapport aux sous-titres */
+    margin-bottom: 25px;
+    /* Marge de 25px sous les sous-titres */
+}
+
+.span-web {
+    color: brown;
+    /* Couleur des span marron */
+}
+
+.span-web2 {
+    color: #304ffe;
+    /* Couleur des span bleu */
+}
+
+.span-web3 {
+    background: linear-gradient(120deg, #12c2e9, #c471ed);
+    /* Couleur de fond pour le texte */
+    -webkit-background-clip: text;
+    /* Utiliser un background en couleur de texte */
+    -webkit-text-fill-color: transparent;
+    /* Définir une couleur mais la rendre transparente pour passer innapercu */
+}
+
+a .span-web3 {
+    font-weight: 900;
+    /* Gras du lien "web 3.0" */
+}
+
+p {
+    margin-bottom: 20px;
+    /* Marge de 20px sous les paragraphes */
+}
+
+.block ul li {
+    list-style-type: disc;
+    /* Rajouter une puce aux listes dans les bloques de textes */
+    margin: 10px;
+    /* Marge de 10px entre les éléments des listes a puces */
+}
+
+.block img {
+    width: 500px;
+    /* Largeur de l'image */
+    margin: auto;
+    /* Centrer l'image */
+    margin-top: 50px;
+    /* Marge de 50px en haut des images */
+    margin-bottom: 30px;
+    /* Marge de 30px en bas des images */
+    display: block;
+    /* Pour pouvoir utiliser le margin: auto; */
+}
+
+button {
+    background: linear-gradient(120deg, #12c2e9, #c471ed);
+    /* Couleur en dégradré du bouton */
+    color: white;
+    /* Couleur du texte du bouton */
+    font-weight: 500;
+    /* Gras du texte du bouton */
+    border: 1px solid black;
+    /* Rajouter une bordure au bouton */
+    border-radius: 10px;
+    /* Arrondissement de 10px du bouton */
+    width: 100px;
+    /* Largeur du bouton */
+    height: 30px;
+    /* Hauteur du bouton */
+    cursor: pointer;
+    /* Transformer le curseur quand on passe la souris dessus */
+}
+
+button a {
+    color: whitesmoke;
+    /* Couleur de texte du lien du bouton contact */
+}
+
+button:hover {
+    background: linear-gradient(120deg, rgba(18, 194, 233, 0.7), rgba(196, 113, 237, 0.7));
+    /* Rajouter de l'opacité au bouton quand on passe la souris dessus */
+}
+
+
+/* ///////////////////////////////////////////////////////////////////////////////// */
+
+
+/* Contact */
+
+.contact {
+    width: 80%;
+    /* Largeur du conteneur */
+    height: 600px;
+    /* Hauteur du conteneur */
+    background-color: #304ffe;
+    /* Couleur de fond du conteneur */
+    border-radius: 30px;
+    /* Arrondissement du conteneur */
+    margin: auto;
+    /* Alignement au centre du conteneur */
+    margin-top: 50px;
+    /* Marge en haut du conteneur */
+    margin-bottom: 50px;
+    /* Marge en bas du conteneur */
+    display: flex;
+    /* Utilisation des flex-box */
+    justify-content: space-around;
+    /* Espacempent de l'image et du formulaire */
+    align-items: center;
+    /* Alignement de haut en bas des items */
+}
+
+.contact img {
+    width: 300px;
+    /* Largeur de l'image */
+}
+
+.form input {
+    width: 300px;
+    /* Largeur des input */
+    height: 30px;
+    /* Hauteur des input */
+    border: none;
+    /* Supprimer bordure des input */
+    outline: none;
+    /* Supprimer bordure intérieur des input */
+    border-radius: 10px;
+    /* Arrondissement des input */
+    padding: 10px;
+    /* Marge intérieur des input */
+    font-size: 16px;
+    /* Taille du texte */
+    margin-bottom: 20px;
+    /* Marge en dessous des input */
+}
+
+.form textarea {
+    width: 300px;
+    /* Largeur du textarea */
+    height: 100px;
+    /* Hauter du textarea */
+    border: none;
+    /* Supprimer bordure du textarea */
+    outline: none;
+    /* Supprimer bordure interieur du textarea */
+    border-radius: 10px;
+    /* Arrondissement du textarea */
+    padding: 10px;
+    /* Marge intérieur du textarea */
+    font-size: 16px;
+    /* Taille du texte */
+    margin-bottom: 30px;
+    /* Marge en dessous du textarea */
+}
+
+.contact button {
+    margin-left: 100px;
+    /* Alignement du bouton avec le formulaire */
+}
+
+
+/* ///////////////////////////////////////////////////////////////////////////////// */
+
+
+/* Quiz */
+
+.boite {
+    display: flex;
+    /* Utiliser les flexbox */
+    justify-content: center;
+    /* Aligner au centrer les éléments */
+    height: 1300px;
+    /* Pour donner une hauter au conteneur, pour pouvoir mettre le footer en bas (étant donné la position absolute) */
+}
+
+.boite-section {
+    margin-top: 100px;
+    /* Marge au dessus du quiz */
+    position: absolute;
+    /* Position absolute pour supperposer la réponse du quiz par dessus le text */
+}
+
+table {
+    margin-bottom: 50px;
+    /* Marge sous chaques questions */
+}
+
+tr>td:nth-child(2) {
+    padding: 0 30px;
+    /* Padding sur les coté de 30px pour le deuxieme élément de tr (Les cases a cocher) */
+}
+
+.checkbox[type="checkbox"] {
+    -webkit-appearance: none;
+    /* Supprimer l'appareance de base des checkbox */
+    -moz-appearance: none;
+    /* Supprimer l'appareance de base des checkbox */
+    -ms-appearance: none;
+    /* Supprimer l'appareance de base des checkbox */
+}
+
+.red input[type="checkbox"] {
+    height: 13px;
+    /* Hauteur des checkbox */
+    width: 13px;
+    /* Largeur des checkbox */
+    background: red;
+    /* Couleur de fond des checkbox */
+    border: 1px solid #ccc;
+    /* Bordure des checkbox */
+}
+
+.green input[type="checkbox"] {
+    height: 13px;
+    /* Hauteur des checkbox */
+    width: 13px;
+    /* Largeur des checkbox */
+    background: green;
+    /* Couleur de fond des checkbox */
+    border: 1px solid #ccc;
+    /* Bordure des checkbox */
+}
+
+#send {
+    display: none;
+    /* N'affiche pas la première partie du formulaire */
+}
+
+#send:target {
+    display: block;
+    /* Reéafiche la deuxième parti du formulaire une fois la bouton cliqué */
+    position: absolute;
+    /* Position absolute pour positionner la deuxième parti du formulaire une fois le bouton cliqué */
+}
+
+
+/* /////////////////////////////////////////////////////////////////// */
+
+footer {
+    background-color: black;
+    /* Couleur de fond du footer */
+    height: 10em;
+    /* Hauteur du footer */
+    display: flex;
+    /* Pour utiliser les flexbox */
+    align-items: center;
+    /* Pour centrer verticalement les éléments */
+    justify-content: center;
+    /* Pour centrer horizontalement les éléments */
+    width: 100%;
+    /* Largeur (100% de la page) */
+}
+
+.footer-text {
+    color: wheat;
+    /* Couleur du texte */
+    text-align: center;
+    /* Alignement du texte au centre */
+}
